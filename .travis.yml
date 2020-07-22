@@ -6,7 +6,7 @@ before_install:
     - docker build -t danushkarmdc/multi-docker -f ./client/Dockerfile.dev ./client
 
 script: 
-    - docker run e CI=true danushkarmdc/multi-docker npm test
+    - docker run e CI=true danushkarmdc/multi-docker npm run test
 
 after_success: 
     - docker build -t danushkarmdc/multi-client ./client
